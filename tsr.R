@@ -2,9 +2,6 @@ library(tidyverse)
 
 taylor_swift <- read.csv("/Users/Caro/Desktop/Taylor Swift Spotify Data 07-23.csv")
 
-#Imagine you are TS' manager and want to find out the kind of song
-#her fans want to hear next! you are analyzing all TS' albums from 
-#2006-2023. 
 
 #Explore the data
 glimpse(taylor_swift)
@@ -18,12 +15,12 @@ taylor_swift <- subset(taylor_swift, select= c(
                                                album_release_date,
                                                album_release_year,
                                                danceability, energy,
-                                               key,loudness,mode, speechiness,
+                                               key,loudness,speechiness,
                                                acousticness, instrumentalness,
-                                               valence, tempo, time_signature,
+                                               valence, tempo,
                                                duration_ms, explicit,
-                                               is_local, track_name,track_number, album_name, 
-                                               key_name, mode_name, key_mode))
+                                                track_name,track_number, album_name, 
+                                               key_name, mode_name))
             
                                                                                
 attach(taylor_swift) #To get rid of $ when picking variables)
@@ -133,9 +130,6 @@ ts_clean %>%
          acousticness, instrumentalness, tempo, valence) %>% 
   summary
 
-#Let's find out Track numbers. How many songs are in Track 1, How many songs are in Track 2
-table(track_number) %>% 
-  view
 
 #Convert the millisecond to minutes and renaming the column
 #from duration_ms = duration_minutes. we will make it a new dataframe
@@ -152,8 +146,8 @@ ts_cleans %>%
   summarise(mean(duration_minutes)) %>% 
   view
 
-#let's visualize these findings
-#visualize the mean of duration of taylor swift album
+#Making visualizations for this analysis
+#Import ggplot2 to make visualization.
 library(ggplot2)
 
 #Scatter plot: TS Song Explicit & Non Explicit Songs throughout the years (Sorted by Minutes)
@@ -185,7 +179,7 @@ ts_cleans %>%
   ggplot(aes(x=speechiness, y=instrumentalness))+
   geom_point(colour='Gold')+
   geom_smooth()+
-  facet_wrap(~explicit)+
+  facet_wrap(~album_release_year)+
   theme_bw()+
   labs(Title="Speechiness & Instrumentalness")
 
@@ -204,16 +198,17 @@ ts_cleans %>%
   geom_boxplot()+
   theme_bw()
 
-#Line Graph for TS Song Loudness over the years
+#Line Density Chart for Valence
 ts_cleans %>% 
-  filter(loudness >=-10.00) %>% 
-  ggplot(aes(x=loudness))+
-  geom_density()+
-  facet_wrap(~album_release_year)+
+  ggplot(aes(valence,fill = explicit))+
+  geom_density(alpha=0.2)+
   theme_bw()
 
-
-  
-
+#Histogram for Tempo of Taylor Swift's songs
+ts_cleans %>% 
+  ggplot(aes(x=tempo))+
+  geom_histogram(binwidth = 4, fill="Orange")+
+  theme_bw()+
+  labs(x="Tempo",y="count",title="Tempo of Taylor Swift Songs")
 
 
