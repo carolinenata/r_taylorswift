@@ -1,4 +1,4 @@
-# Taylor Swift Music Style Analysis
+# Taylor Swift Music Style Analysis: R Programming
 
 ## Background
 
@@ -24,41 +24,41 @@ To do my analysis, I obtained my dataset from Kaggle. This quality dataset was l
 ## Process
 I imported the CSV data to R Programming.  They have 36 variables. I decided to get rid of the once that are repetitive and not relevant to the analysis by coding it in R Programming. Eventually the variables I keep are:
 
-*track_name
+* track_name
 
-*track_number
+* track_number
 
-*album_name
+* album_name
 
-*album_release_date
+* album_release_date
 
-*album_release_year
+* album_release_year
 
-*danceability
+* danceability
 
-*energy
+* energy
 
-*key
+* key
 
-*loudness
+* loudness
 
-*speechiness
+* speechiness
 
-*acousticness
+* acousticness
 
-*instrumentalness
+* instrumentalness
 
-*valence
+* valence
 
-*tempo
+* tempo
 
-*duration_ms
+* duration_ms
 
-*explicit
+* explicit
 
-*key_name
+* key_name
 
-*mode_name
+* mode_name
 
 ## Analyze
 
@@ -66,23 +66,23 @@ View my R programming code here in [Github](https://github.com/carolinenata/tayl
 
 Here are some notable analysis I discover:
 
-*'Reputation Stadium Tour Surprise Song Playlist' has 46 songs in her album. It has the most songs in her album.
+* 'Reputation Stadium Tour Surprise Song Playlist' has 46 songs in her album. It has the most songs in her album.
 
-*TS has 422 Non Explicit Songs and 54 explicit songs.
+* TS has 422 Non Explicit Songs and 54 explicit songs.
 
-*'Lover' is the album with the highest mean danceability (0.658) while 'Speak Now World Tour Live' has the least (0.441). 
+* 'Lover' is the album with the highest mean danceability (0.658) while 'Speak Now World Tour Live' has the least (0.441). 
 
-*'1989' is the album with the highest mean energy (0.698) while 'Folkore: The Long Pond Studio Sessions' has the least (0.373).
+* '1989' is the album with the highest mean energy (0.698) while 'Folkore: The Long Pond Studio Sessions' has the least (0.373).
 
-*'Speak Now - Taylor's Version' is the album with the highest loudness (-4.600) and 'Midnights' has the least (-10.88).
+* 'Speak Now - Taylor's Version' is the album with the highest loudness (-4.600) and 'Midnights' has the least (-10.88).
 
-*'Speak Now - Tour Live' has the highest overall mean minutes (4.9) while Midnights has the least (3.395).
+* 'Speak Now - Tour Live' has the highest overall mean minutes (4.9) while Midnights has the least (3.395).
 
-*'1989 (Deluxe)' has the highest speechiness(0.173) while 'Fearless - Platinum Edition' has the least (0.031).
+* '1989 (Deluxe)' has the highest speechiness(0.173) while 'Fearless - Platinum Edition' has the least (0.031).
 
-*'Evermore' has the highest acousticness (0.795) while 1989 has the least acousticness(0.1131).
+* 'Evermore' has the highest acousticness (0.795) while 1989 has the least acousticness(0.1131).
 
-*'Midnight' has the highest instrumentalness (3.77) while 'Live From Clear Channel Stripped 2008' has the least instrumentalness (0.00) 
+* 'Midnight' has the highest instrumentalness (3.77) while 'Live From Clear Channel Stripped 2008' has the least instrumentalness (0.00) 
 
 
 ## Share
