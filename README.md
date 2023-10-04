@@ -62,7 +62,8 @@ I imported the CSV data to R Programming.  They have 36 variables. I decided to 
 
 ## Analyze
 
-View my R programming code here in [Github](https://github.com/carolinenata/taylor_swift)
+View my R programming code [here](https://github.com/carolinenata/r_taylorswift/blob/main/tsr.R)
+
 
 Here are some notable analysis I discover:
 
